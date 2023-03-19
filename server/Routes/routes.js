@@ -7,7 +7,7 @@ import { createStudent, delStudent, getStudent, updateStudent } from "../Control
 //get method
 route.get("/get",getStudent)  
 // update method 
-route.get("/get",(req,res)=>{
+route.get("/test",(req,res)=>{
  res.send("hello");
  )  
  
