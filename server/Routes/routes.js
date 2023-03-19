@@ -9,6 +9,7 @@ route.get("/get",getStudent)
 // update method 
 route.get("/test",(req,res)=>{
  res.send("hello");
+}
  )  
  
 route.put("/update",updateStudent)
