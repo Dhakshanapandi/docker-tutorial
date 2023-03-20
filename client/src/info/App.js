@@ -13,12 +13,12 @@ class App extends React.Component{
   }
   create = (data) =>{
     if(data.isEdit === false){
-    axios.post("http://localhost:5000/info/createstudent",data).then((res)=>{
+    axios.post("https://react-crud3.onrender.com/info/createstudent",data).then((res)=>{
       this.getAll()
     })
     }
     else{
-      axios.put("http://localhost:5000/info/update",data).then((res)=>{
+      axios.put("https://react-crud3.onrender.com/info/update",data).then((res)=>{
         this.getAll()
       })
     }
@@ -27,7 +27,7 @@ class App extends React.Component{
     this.getAll();
   }
   getAll(){
-    axios.get("http://localhost:5000/info/get").then(res=>{
+    axios.get("https://react-crud3.onrender.com/info/get").then(res=>{
           this.setState({
             data:res.data 
     })
@@ -45,7 +45,7 @@ class App extends React.Component{
 
       if(option)
       {
-        axios.delete(`http://localhost:5000/info/delete/${data._id}`).then(res=>{
+        axios.delete(`https://react-crud3.onrender.com/info/delete/${data._id}`).then(res=>{
           this.getAll()
         })
       } 
