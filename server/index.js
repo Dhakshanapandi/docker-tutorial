@@ -15,7 +15,7 @@ app.use("/info",route);
 
 //db connection
 mongoose.set('strictQuery', true); 
-const connect = async ()=>{
+const connect = async ()=>{ 
     try{
 
     await mongoose.connect(process.env.MONGO)
