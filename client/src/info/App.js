@@ -34,7 +34,6 @@ class App extends React.Component{
     })
   }
     update = data =>{
-      console.log(data);
       this.setState({
         editData:data
       })
