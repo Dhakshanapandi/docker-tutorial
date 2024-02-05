@@ -2,6 +2,10 @@ name: Auto-PR-on-Dev-Push
 
 on:
   push:
+    branches-ignore:
+      - '*'
+
+  workflow_dispatch:
     branches:
       - dev
 
@@ -27,4 +31,3 @@ jobs:
         assignees: 'Dhakshanapandi'
         reviewers: 'reviewer1,reviewer2'
         token: ${{ secrets.GITHUB_TOKEN }}
-
