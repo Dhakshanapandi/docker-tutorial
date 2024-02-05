@@ -22,11 +22,11 @@ jobs:
     - name: Build and push client Docker image
       working-directory: client
       run: |
-        docker build -t your-dockerhub-username/client-image:latest .
-        docker push your-dockerhub-username/client-image:latest
+        docker build -t dhakshanapandi/client-image:latest .
+        docker push dhakshanapandi/client-image:latest
 
     - name: Build and push server Docker image
       working-directory: server
       run: |
-        docker build -t your-dockerhub-username/server-image:latest .
-        docker push your-dockerhub-username/server-image:latest
+        docker build -t dhakshanapandi/server-image:latest .
+        docker push dhakshanapandi/server-image:latest
