@@ -30,4 +30,4 @@ jobs:
         labels: 'auto-generated'
         assignees: 'Dhakshanapandi'
         reviewers: 'reviewer1,reviewer2'
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.TOKEN }}
