@@ -20,8 +20,11 @@ jobs:
 
     - name: Install GitHub CLI
       run: |
+        # Specify the GitHub CLI version (replace with the latest version if needed)
+        GH_VERSION="2.43.1"
+        
         # Download and install GitHub CLI
-        sudo wget https://github.com/cli/cli/releases/latest/download/gh_linux_amd64.tar.gz -O /tmp/gh.tar.gz
+        sudo wget "https://github.com/cli/cli/releases/download/v${GH_VERSION}/gh_${GH_VERSION}_linux_amd64.tar.gz" -O /tmp/gh.tar.gz
         sudo tar xzf /tmp/gh.tar.gz -C /tmp/
         sudo mv /tmp/gh_*/* /usr/local/bin/
         gh --version
