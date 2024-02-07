@@ -1,4 +1,4 @@
-name: Create PR on Push to Dev
+name: Create Pull Request
 
 on:
   push:
@@ -6,19 +6,22 @@ on:
       - dev
 
 jobs:
-  create_pr:
+  create_pull_request:
     runs-on: ubuntu-latest
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
 
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@main
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: "Automated pull request from dev to main"
-        title: "Automated pull request from dev to main"
-        body: "This pull request is automatically generated whenever a push event occurs in the dev branch."
-        branch: dev
-        base: main
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          base: main
+          branch: dev
+          title: 'Merge dev into main'
+          body: 'Automatically created pull request from dev to main.'
+
+          # You can customize these options if needed
+          labels: 'automated-pr'
+          reviewers: 'username1,username2'
+          assignees: 'username3'
