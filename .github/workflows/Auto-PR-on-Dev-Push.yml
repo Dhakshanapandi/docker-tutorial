@@ -18,16 +18,11 @@ jobs:
         git config --global user.email "dhakshanapandi84@gmail.com"
         git config --global user.name "Dhakshanapandi"
 
-    - name: Install GitHub CLI
+    - name: Debug Repository State
       run: |
-        # Specify the GitHub CLI version (replace with the latest version if needed)
-        GH_VERSION="2.43.1"
-        
-        # Download and install GitHub CLI
-        sudo wget "https://github.com/cli/cli/releases/download/v${GH_VERSION}/gh_${GH_VERSION}_linux_amd64.tar.gz" -O /tmp/gh.tar.gz
-        sudo tar xzf /tmp/gh.tar.gz -C /tmp/
-        sudo mv /tmp/gh_*/* /usr/local/bin/
-        gh --version
+        git status
+        git branch
+        git log -n 5
 
     - name: Create Pull Request
       run: |
