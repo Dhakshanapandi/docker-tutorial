@@ -20,10 +20,11 @@ jobs:
 
     - name: Install GitHub CLI
       run: |
-        sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-        sudo apt-add-repository https://cli.github.com/packages
-        sudo apt-get update
-        sudo apt-get install gh
+        # Download and install GitHub CLI
+        sudo wget https://github.com/cli/cli/releases/latest/download/gh_linux_amd64.tar.gz -O /tmp/gh.tar.gz
+        sudo tar xzf /tmp/gh.tar.gz -C /tmp/
+        sudo mv /tmp/gh_*/* /usr/local/bin/
+        gh --version
 
     - name: Create Pull Request
       run: |
