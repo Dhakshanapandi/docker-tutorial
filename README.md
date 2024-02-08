@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+<<<<<<< HEAD     
 Step 1: Clone this Repository by Url :$ git clone <URL>       
 
 Step 2 : Navigate  to server Folder --> open .env file -----> Replace your Mongo Uri and save it
